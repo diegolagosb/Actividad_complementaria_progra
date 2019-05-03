@@ -37,13 +37,13 @@ public class JuegoDeDados {
         }
     }
 
-    public void mostrarOpcionesMenu() {
+    private void mostrarOpcionesMenu() {
         System.out.println("Ingrese una opción: ");
         System.out.println("<1> Jugar");
         System.out.println("<2> Salir del juego");
     }
 
-    public boolean validarSalidaDelJuego() {                //valida la segunda opcion de salir, si el usuario quiere detener el programa, o seguir usandolo (jugando).
+    private boolean validarSalidaDelJuego() {                //valida la segunda opcion de salir, si el usuario quiere detener el programa, o seguir usandolo (jugando).
         System.out.println("¿Desea salir del juego?");
         System.out.println("<1> Seguir jugando");
         System.out.println("<2> Salir");
@@ -56,29 +56,29 @@ public class JuegoDeDados {
         return teclado.nextInt();
     }
 
-    public Dado crearDado() {                               //crea el objeto dado
+    private Dado crearDado() {                               //crea el objeto dado
         return new Dado();
     }
 
-    public Dado lanzarDado1(Dado dado1) {
+    private Dado lanzarDado1(Dado dado1) {
         int resultado = (int) (Math.random() * 6) + 1;      //crea al azar el valor que resultó al lanzar el primer dado (cara superior a la vista).
         dado1.setCara(resultado);
         System.out.println("El resultado del primer dado es: " + resultado);
         return dado1;
     }
 
-    public Dado lanzarDado2(Dado dado2) {                   //crea al azar el valor que resultó al lanzar el segundo dado (cara superior a la vista).
+    private Dado lanzarDado2(Dado dado2) {                   //crea al azar el valor que resultó al lanzar el segundo dado (cara superior a la vista).
         int resultado = (int) (Math.random() * 6) + 1;
         dado2.setCara(resultado);
         System.out.println("El resultado del segundo dado es: " + resultado);
         return dado2;
     }
 
-    public int sumarDados(Dado dado1, Dado dado2) {         //calcula la suma de los resultados de los 2 lanzamientos.
+    private int sumarDados(Dado dado1, Dado dado2) {         //calcula la suma de los resultados de los 2 lanzamientos.
         return dado1.getCara() + dado2.getCara();
     }
 
-    public void comprobarGanador(int resultado) {           //comprueba si la suma de los resultados al lanzar los dados es el esperado para ser ganador del juego.
+    private void comprobarGanador(int resultado) {           //comprueba si la suma de los resultados al lanzar los dados es el esperado para ser ganador del juego.
         if (resultado == 7) {
             System.out.println("Ganaste! La suma de los dados ha sido 7.");
         } else {
